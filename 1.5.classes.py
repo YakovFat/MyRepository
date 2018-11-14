@@ -1,17 +1,17 @@
 class Animal:
     feed = 'Не покормлен'
-    voice = 'hi'
-    name = 'name'
-    weight = 0
 
-    def name_1(self, name):
+    def __init__(self, name, weight, voice):
         self.name = name
-
-    def weight_1(self, weight):
         self.weight = weight
+        self.voice = voice
 
     def feed_1(self):
         self.feed = 'Покормлен'
+
+    def __add__(self, other):
+
+        return self.weight + other.weight
 
 
 class Birds(Animal):
@@ -21,22 +21,32 @@ class Birds(Animal):
         self.collect = 'Собраны'
 
 class Dairy_cattle(Animal):
-    pass
+    milk = 'Не подоена'
+
+    def milk_1(self):
+        self.milk = 'Подоена'
+
 
 class Wool(Animal):
-    pass
+    cut = 'Не подстрижена'
 
-goose_1 = Birds()
-goose_2 = Birds()
-duck = Birds()
-chicken_1 = Birds()
-chicken_2 = Birds()
-cow = Dairy_cattle()
-goat_1 = Dairy_cattle()
-goat_2 = Dairy_cattle()
-sheep_1 = Wool()
-sheep_2 = Wool()
+    def trim(self):
+      self.cut = 'Подстрижена'
 
-print(sheep_1.weight)
+goose_1 = Birds('Серый', 12, 'гагага')
+goose_2 = Birds('Белый', 8, 'гагага')
+duck = Birds('Кряква', 3, 'кряяя')
+chicken_1 = Birds('Ко-Ко', 3.1, 'кококо')
+chicken_2 = Birds('Кукареку', 2.5, 'кококо')
+cow = Dairy_cattle('Манька', 512, 'мууу')
+goat_1 = Dairy_cattle('Рога', 50, 'меее')
+goat_2 = Dairy_cattle('Копыта', 45, 'меее')
+sheep_1 = Wool('Барашек', 90, 'беее')
+sheep_2 = Wool('Кудрявый', 92, 'беее')
+
+goose_1.feed_1()
+cow.milk_1()
+sheep_2.trim()
 
 
+goose_1+goose_2
