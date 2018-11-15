@@ -48,5 +48,27 @@ goose_1.feed_1()
 cow.milk_1()
 sheep_2.trim()
 
+paddock = []
+paddock.append(goose_1)
+paddock.append(goose_2)
+paddock.append(duck)
+paddock.append(chicken_1)
+paddock.append(chicken_2)
+paddock.append(cow)
+paddock.append(goat_1)
+paddock.append(goat_2)
+paddock.append(sheep_1)
+paddock.append(sheep_2)
 
-goose_1+goose_2
+tmp = 0
+for animal in paddock:
+    tmp += animal.weight
+print("Общий вес животных:", tmp)
+
+max = 0
+max_name = 0
+for animal in paddock:
+    if animal.weight >= max:
+        max = animal.weight
+        max_name = animal.name
+print("Общий вес животных:", max_name)
