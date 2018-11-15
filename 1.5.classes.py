@@ -10,7 +10,6 @@ class Animal:
         self.feed = 'Покормлен'
 
     def __add__(self, other):
-
         return self.weight + other.weight
 
 
@@ -19,6 +18,7 @@ class Birds(Animal):
 
     def collect_eggs(self):
         self.collect = 'Собраны'
+
 
 class Dairy_cattle(Animal):
     milk = 'Не подоена'
@@ -31,7 +31,8 @@ class Wool(Animal):
     cut = 'Не подстрижена'
 
     def trim(self):
-      self.cut = 'Подстрижена'
+        self.cut = 'Подстрижена'
+
 
 goose_1 = Birds('Серый', 12, 'гагага')
 goose_2 = Birds('Белый', 8, 'гагага')
@@ -65,10 +66,10 @@ for animal in paddock:
     tmp += animal.weight
 print("Общий вес животных:", tmp)
 
-max = 0
+maximum = 0
 max_name = 0
 for animal in paddock:
-    if animal.weight >= max:
-        max = animal.weight
+    if animal.weight >= maximum:
+        maximum = animal.weight
         max_name = animal.name
 print("Общий вес животных:", max_name)
