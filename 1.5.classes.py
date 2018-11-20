@@ -9,10 +9,6 @@ class Animal:
     def feed_1(self):
         self.feed = 'Покормлен'
 
-    def __add__(self, other):
-        return self.weight + other.weight
-
-
 class Birds(Animal):
     collect = 'Не собраны'
 
