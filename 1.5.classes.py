@@ -6,44 +6,43 @@ class Animal:
         self.weight = weight
         self.voice = voice
 
-    def feed_1(self):
+    def feed(self):
         self.feed = 'Покормлен'
 
-class Birds(Animal):
+    def  collect_stuff(self):
+        pass
+
+class Bird(Animal):
     collect = 'Не собраны'
 
-    def collect_eggs(self):
+    def  collect_stuff(self):
+        super().collect_stuff()
         self.collect = 'Собраны'
-
 
 class Dairy_cattle(Animal):
     milk = 'Не подоена'
 
-    def milk_1(self):
+    def  collect_stuff(self):
+        super().collect_stuff()
         self.milk = 'Подоена'
-
 
 class Wool(Animal):
     cut = 'Не подстрижена'
 
-    def trim(self):
+    def  collect_stuff(self):
+        super().collect_stuff()
         self.cut = 'Подстрижена'
 
-
-goose_1 = Birds('Серый', 12, 'гагага')
-goose_2 = Birds('Белый', 8, 'гагага')
-duck = Birds('Кряква', 3, 'кряяя')
-chicken_1 = Birds('Ко-Ко', 3.1, 'кококо')
-chicken_2 = Birds('Кукареку', 2.5, 'кококо')
+goose_1 = Bird('Серый', 12, 'гагага')
+goose_2 = Bird('Белый', 8, 'гагага')
+duck = Bird('Кряква', 3, 'кряяя')
+chicken_1 = Bird('Ко-Ко', 3.1, 'кококо')
+chicken_2 = Bird('Кукареку', 2.5, 'кококо')
 cow = Dairy_cattle('Манька', 512, 'мууу')
 goat_1 = Dairy_cattle('Рога', 50, 'меее')
 goat_2 = Dairy_cattle('Копыта', 45, 'меее')
 sheep_1 = Wool('Барашек', 90, 'беее')
 sheep_2 = Wool('Кудрявый', 92, 'беее')
-
-goose_1.feed_1()
-cow.milk_1()
-sheep_2.trim()
 
 paddock = []
 paddock.append(goose_1)
@@ -68,4 +67,11 @@ for animal in paddock:
     if animal.weight >= maximum:
         maximum = animal.weight
         max_name = animal.name
-print("Общий вес животных:", max_name)
+print("Самое большое по весу животное:", max_name)
+
+for padd in paddock:
+	padd.collect_stuff()
+
+print(goose_1.collect)
+print(cow.milk)
+print(sheep_2.cut)
