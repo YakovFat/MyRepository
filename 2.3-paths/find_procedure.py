@@ -52,41 +52,29 @@ if __name__ == '__main__':
     print('Введите строку:')
     line_user = input()
 
-    for clone in list_sql:
-        f = open(clone)
+    for list_file in list_sql:
+        f = open(list_file)
         files = f.read()
         if line_user in files:
-            print(clone)
-            list_user.append(clone)
+            print(list_file)
+            list_user.append(list_file)
         f.close()
     print(len(list_user))
 
-    print('Введите строку:')
-    line_user = input()
+    while True:
+        print('Введите строку:')
+        line_user = input()
 
-    for clone in list_user:
-        f = open(clone)
-        files = f.read()
-        if line_user in files:
-            print(clone)
-            list_user_2.append(clone)
-        f.close()
-    print(len(list_user_2))
+        for list_file in list_user:
+            f = open(list_file)
+            files = f.read()
+            if line_user in files:
+                print(list_file)
+                list_user_2.append(list_file)
+            f.close()
+        print(len(list_user_2))
 
 
-
-
-# вводим строку
-# показываем список файлов
-# показываем счетчик
-# записываем эти файлы в список (или не в список?)
-#
-# опять вводим строку
-# ищем уже по списку
-# показываем счетчик
-# записываем файлы в список
-
-# повторяем второе
 
 
 
