@@ -74,7 +74,7 @@ if __name__ == '__main__':
                 list_user_2.append(list_file)
             f.close()
         print(len(list_user_2))
-		list_user = list_user_2
+	list_user = list_user_2
 
 
 
