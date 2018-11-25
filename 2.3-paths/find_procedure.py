@@ -44,6 +44,7 @@ if __name__ == '__main__':
     list_sql = []
     list_user = []
     list_user_2 = []
+    # нахожу все файлы с .sql
     for file in os.listdir(migrations):
         if file.endswith('.sql'):
             abs_file_path = os.path.join(migrations, file)
@@ -51,7 +52,7 @@ if __name__ == '__main__':
 
     print('Введите строку:')
     line_user = input()
-
+    # ищу среди файлов с .sql нужные пользователю
     for list_file in list_sql:
         f = open(list_file)
         files = f.read()
@@ -60,7 +61,7 @@ if __name__ == '__main__':
             list_user.append(list_file)
         f.close()
     print(len(list_user))
-
+    # а тут ищу нужные пользователю среди тех что уже найдено пользователем, но не понимаю как это зациклить чтобы дальше искалось
     while True:
         print('Введите строку:')
         line_user = input()
