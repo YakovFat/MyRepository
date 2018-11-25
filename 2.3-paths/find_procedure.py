@@ -61,11 +61,11 @@ if __name__ == '__main__':
             list_user.append(list_file)
         f.close()
     print(len(list_user))
-    # а тут ищу нужные пользователю среди тех что уже найдено пользователем, но не понимаю как это зациклить чтобы дальше искалось
+    # а тут ищу нужные пользователю среди тех что уже найдено пользователем, но не понимаю как это зациклить
+    # чтобы дальше искалось
     while True:
         print('Введите строку:')
         line_user = input()
-
         for list_file in list_user:
             f = open(list_file)
             files = f.read()
@@ -74,6 +74,7 @@ if __name__ == '__main__':
                 list_user_2.append(list_file)
             f.close()
         print(len(list_user_2))
+		list_user = list_user_2
 
 
 
